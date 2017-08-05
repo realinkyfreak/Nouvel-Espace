@@ -12,14 +12,11 @@ def play():
         print("You are in the %a." %current_room.name)
         print(current_room.room_details)
         player_action = input("What next? : ")
-        game_action = current_room.room_action(player_action.title())
-        if game_action == "NewRoom":
-            load_next_room()
-
-
-def load_next_room():
-    current_room = "New Room"
-    print(current_room)
+        next_room = current_room.room_action(player_action.title())
+        if next_room:
+            print(next_room)
+            '''How do I eval the string returned to create a new room from it?'''
+            
 
 
 play()
