@@ -2,36 +2,23 @@ class Cockpit:
 
     def __init__(self):
         self.name = "Cockpit"
-        self.navigation = {'North': 'Cargo Hold'}
-        self.room_details = 'You can see a sealed door to the Cargo Hold, next to the door is the door release lever.'
+        self.navigation = ['North']
+        self.room_details = "You can see a sealed door to the Cargo Hold, next to the door is the door release lever."
         self.inventory = []
         self.door_locked = True
 
     def room_action(self,action):
-        if action == "":
-            print(action)
-        elif action == "":
-            print(action)
-        elif action == "":
-            print(action)
+        if action == "Pull Lever":
+            self.door_locked = False
+            self.room_details = "You can see an open door to the Cargo Hold, next to the door is the door release " \
+                                "lever."
+            print("You unlocked the door.")
+        elif action == "North" and self.door_locked == False:
+            '''load new room functionality?'''
+            return "NewRoom"
+        elif action == "North" and self.door_locked == True:
+            print("You might need to pull a lever first?")
+        elif action == "East" or action == "South" or action == "West":
+            print("You can't go that way.")
         else:
-            print("You cant do that here!")
-
-
-class CargoHold:
-
-    def __init__(self):
-        self.name = "Cargo Hold"
-        self.navigation = {'North':'Ships Store','East': 'Airlock','South': 'Cockpit'}
-        self.room_details = 'You are in the cargo hold, there has been a small fire here.'
-        self.inventory = ['broken shuttle arm','Box Cutter Knife']
-
-    def room_action(self,action):
-        if action == "":
-            print(action)
-        elif action == "":
-            print(action)
-        elif action == "":
-            print(action)
-        else:
-            print("You cant do that here!")
+            print("Sorry, I don't understand.")
