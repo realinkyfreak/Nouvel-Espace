@@ -2,7 +2,7 @@ class Cockpit:
 
     def __init__(self):
         self.name = "Cockpit"
-        self.navigation = {'North': 'CargoHold'}
+        self.navigation = {'North': 'Cargo Hold'}
         self.room_details = "You can see a sealed door to the Cargo Hold, next to the door is the door release lever."
         self.inventory = []
         self.door_locked = True
