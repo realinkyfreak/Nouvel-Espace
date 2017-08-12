@@ -7,17 +7,17 @@ class Player:
 
     def __init__(self):
         self.player_alive = True
-        self.vistory = False
+        self.victory = False
         self.inventory = []
 
     def is_alive(self):
-        if self.player_alive == False:
+        if self.player_alive is False:
             return False
         else:
             return True
 
     def is_victorious(self):
-        if self.victory == False:
+        if self.victory is False:
             return False
         else:
             return True
