@@ -27,3 +27,9 @@ class Player:
 
     def player_victory(self):
         self.victory = True
+
+    def add_inventory(self,item):
+        self.inventory.append(item)
+
+    def drop_inventory(self,item):
+        self.inventory.remove(item)
