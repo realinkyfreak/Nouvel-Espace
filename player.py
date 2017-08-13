@@ -2,7 +2,6 @@ class Player:
 
     player_alive = True
     victory = False
-    inventory = []
     current_room = ''
 
     def __init__(self):
@@ -28,8 +27,3 @@ class Player:
     def player_victory(self):
         self.victory = True
 
-    def add_inventory(self,item):
-        self.inventory.append(item)
-
-    def drop_inventory(self,item):
-        self.inventory.remove(item)
