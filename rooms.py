@@ -31,6 +31,14 @@ class Cockpit:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
         else:
             print("Sorry, I don't understand.")
 
@@ -67,6 +75,14 @@ class CargoHold:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
         else:
             print("Sorry, I don't understand.")
 
@@ -99,6 +115,14 @@ class AirLock:
             return 'CargoHold()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
         else:
             print("Sorry, I don't understand.")
 
@@ -129,6 +153,14 @@ class ShipsStore:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
         else:
             print("Sorry, I don't understand.")
 
@@ -160,5 +192,13 @@ class CrashSite:
             return 'AirLock()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
         else:
             print("Sorry, I don't understand.")
