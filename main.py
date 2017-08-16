@@ -9,7 +9,7 @@ player = Player()
 current_room = Cockpit()
 
 while player.is_alive() and not player.is_victorious():
-    print("You are in the %a." % current_room.name.title())
+    print("You are at the %a." % current_room.name.title())
     print(current_room.room_details)
     current_room.show_inventory()
     player_action = input("What next? : ")
