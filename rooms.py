@@ -1,5 +1,44 @@
 import inventory
 
+
+class RoomTemplate:
+    def __init__(self):
+        self.name = "Room Template"
+        self.inventory = []
+        self.room_details = "Describe the room to the player"
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            print("You can't go that way.")
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
 class Cockpit:
 
     def __init__(self):
@@ -92,7 +131,7 @@ class AirLock:
     def __init__(self):
         self.name = "Air Lock"
         self.inventory = []
-        self.room_details = "You're in the airlock. To the east, the outer door has been torn off in the crash and " \
+        self.room_details = "To the east, the outer door has been torn off in the crash and " \
                             "you can see crash debris outside."
 
 
@@ -183,7 +222,7 @@ class CrashSite:
 
     def room_action(self, action):
         if action == "North":
-            print("You can't go that way.")
+            return 'JungleOne()'
         elif action == "East":
             print("You can't go that way.")
         elif action == "South":
@@ -192,6 +231,290 @@ class CrashSite:
             return 'AirLock()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class JungleOne:
+    def __init__(self):
+        self.name = "Jungle"
+        self.inventory = []
+        self.room_details = "You're surrounded by trees, vegetation and the strange calls of " \
+                            "wild animals."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'JungleTwo()'
+        elif action == "East":
+            return 'JungleThree()'
+        elif action == "South":
+            return 'CrashSite()'
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class JungleTwo:
+    def __init__(self):
+        self.name = "Jungle"
+        self.inventory = []
+        self.room_details = "More trees, vegetation and the strange calls of " \
+                            "wild animals."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'CanyonEdgeNorth()'
+        elif action == "East":
+            return 'JungleFour()'
+        elif action == "South":
+            return 'JungleOne()'
+        elif action == "West":
+            return 'Causeway()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class JungleThree:
+    def __init__(self):
+        self.name = "Jungle"
+        self.inventory = ['Rope Ladder']
+        self.room_details = "More trees, vegetation and the strange calls of " \
+                            "wild animals."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("****To be implemented****")
+        elif action == "East":
+            print("****To be implemented****")
+        elif action == "South":
+            print("****To be implemented****")
+        elif action == "West":
+            print("****To be implemented****")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class JungleFour:
+    def __init__(self):
+        self.name = "Jungle"
+        self.inventory = []
+        self.room_details = "More trees, vegetation and the strange calls of " \
+                            "wild animals."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'JungleThree()'
+        elif action == "West":
+            return 'JungleTwo()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class CanyonEdgeNorth:
+    def __init__(self):
+        self.name = "Canyon Edge"
+        self.inventory = []
+        self.room_details = "You can see out over a large deep canyon. It runs in an arch from your West round you " \
+                            "to the South. There are barriers in front of you, it appears to be a viewing area."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'JungleTwo()'
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class Causeway:
+    def __init__(self):
+        self.name = "Causeway"
+        self.inventory = []
+        self.room_details = "You are walking along a narrow causeway. To the East is the crash trench clearly visible" \
+                            " through the trees. To your south is a large lake, but your path is blocked by thick" \
+                            " jungle."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            return 'JungleTwo()'
+        elif action == "South":
+            print("You can't go that way.")
+        elif action == "West":
+            return 'CrashTrench()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class CrashTrench:
+    def __init__(self):
+        self.name = "Crash Trench"
+        self.inventory = ['Torch','Water Bottle']
+        self.room_details = "You're standing in the bottom of a shallow trench that was dug as the ship crashed and " \
+                            "skidded along the ground. To the south one of the ships engines is still running and " \
+                            "hot gasses and flames are eminating from it."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("The canyon edge is unguarded, probably best not to go that way.")
+        elif action == "East":
+            return 'Causeway()'
+        elif action == "South":
+            print("The hot gasses from the engine start to choke you, at least until the jet flames ignite a small "
+                  "patch of your hair like the wick of a candle. You rush back patting out your flaming hair!")
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Take Torch":
+            inventory.add_item('Torch')
+            self.inventory.remove('Torch')
+            print("You took the Torch.")
+        elif action == "Take Bottle" or action == "Take Water Bottle":
+            inventory.add_item('Water Bottle')
+            self.inventory.remove('Water Bottle')
+            print("You took the Water Bottle.")
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
