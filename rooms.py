@@ -170,15 +170,15 @@ class ShipsStore:
 
     def __init__(self):
         self.name = "Ships Store"
-        self.inventory = []
+        self.inventory = ['First Aid Kit']
         self.room_details = "The ships store is too dark to see anything."
 
     def show_inventory(self):
-        if self.inventory:
+        if self.inventory and 'Torch' in inventory.inventory:
             print("Looking around you also see:")
             print(self.inventory)
         else:
-            print("Looking around you don't see anything significant.")
+            print("It's too dark.")
 
 
     def room_action(self,action):
@@ -190,6 +190,13 @@ class ShipsStore:
             return 'CargoHold()'
         elif action == "West":
             print("You can't go that way.")
+        elif action == 'Take First Aid Kit':
+            if 'Torch' in inventory.inventory:
+                inventory.add_item('First Aid Kit')
+                self.inventory.remove('First Aid Kit')
+                print("You took the First Aid Kit.")
+            else:
+                print("I can't see that.")
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Exit":
@@ -703,11 +710,131 @@ class RopeBridge:
         if action == "North":
             print("You can't go that way.")
         elif action == "East":
-            print("*** End of the Road for now! ***")
+            return 'BridgeCrossing()'
         elif action == "South":
             print("You can't go that way.")
         elif action == "West":
             return('Clearing()')
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class BridgeCrossing:
+    def __init__(self):
+        self.name = "Bridge Crossing"
+        self.inventory = []
+        self.room_details = "There is a worn track leading North. There is also a set of narrow steps leading down" \
+                            " to a beach that continues to the East?"
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'TrackOne()'
+        elif action == "East":
+            print("You can't go that way. But there are steps leading Down.")
+        elif action == "Down":
+            return 'BeachOne()'
+        elif action == "South":
+            print("You can't go that way.")
+        elif action == "West":
+            return('RopeBridge()')
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class BeachOne:
+    def __init__(self):
+        self.name = "Beach"
+        self.inventory = []
+        self.room_details = "The beach is sandy and the waves lap gently at the shore. The " \
+                            "beach continues to the East, and steps lead up from the beach."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("*** TO DE DONE ***")
+        elif action == "Up":
+            return 'BridgeCrossing()'
+        elif action == "South":
+            print("You can't go that way.")
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class TrackOne:
+    def __init__(self):
+        self.name = "Worn Track"
+        self.inventory = []
+        self.room_details = "The track continues to the North."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("*** TO BE DONE ***")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'BridgeCrossing()'
+        elif action == "West":
+            print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Exit":
