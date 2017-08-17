@@ -19,8 +19,8 @@ def show_inventory():
         print("You are not carrying anything.")
 
 
-def save_game():
-    game_saved = savegame.save_game(inventory)
+def save_game(room):
+    game_saved = savegame.save_game(inventory,room)
     if game_saved:
         print("Game Saved!")
     else:
@@ -30,6 +30,7 @@ def save_game():
 def load_game():
     game_loaded = savegame.load_game()
     if game_loaded:
-        inventory = game_loaded
+        for item in game_loaded:
+            inventory.append(item)
     else:
         print("No save game found, starting at the begining...")

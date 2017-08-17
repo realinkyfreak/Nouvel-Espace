@@ -1,7 +1,8 @@
-def save_game(inventory):
+def save_game(inventory,room):
     try:
         save_file = open("savegame.txt", 'w')
         save_file.flush()
+        save_file.write(room + "\n")
         for item in inventory:
             save_file.write(item + "\n")
         return True
@@ -14,6 +15,7 @@ def load_game():
 
     try:
         save_file = open("savegame.txt")
+        '''Need to skip line one, and use this to load room'''
         for line in save_file:
             temp_inventory.append(line)
         return temp_inventory

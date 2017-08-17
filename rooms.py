@@ -1,5 +1,5 @@
 import inventory
-'''Need to add save and load game to each room!'''
+
 
 class RoomTemplate:
     def __init__(self):
@@ -27,6 +27,10 @@ class RoomTemplate:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -70,6 +74,10 @@ class Cockpit:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -117,6 +125,10 @@ class CargoHold:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -157,6 +169,10 @@ class AirLock:
             return 'CargoHold()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -205,6 +221,10 @@ class ShipsStore:
                 print("I can't see that.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -244,6 +264,10 @@ class CrashSite:
             return 'AirLock()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -283,6 +307,10 @@ class JungleOne:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -322,6 +350,10 @@ class JungleTwo:
             return 'Causeway()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -361,6 +393,10 @@ class JungleThree:
             return 'JungleOne()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -400,6 +436,10 @@ class JungleFour:
             return 'JungleTwo()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -439,6 +479,10 @@ class CanyonEdgeNorth:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -479,6 +523,10 @@ class Causeway:
             return 'CrashTrench()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -523,6 +571,10 @@ class CrashTrench:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Take Torch":
             inventory.add_item('Torch')
             self.inventory.remove('Torch')
@@ -565,6 +617,10 @@ class CanyonEdgeEast:
             return 'JungleThree()'
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -606,6 +662,10 @@ class LookoutPost:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -644,6 +704,10 @@ class CanyonPass:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -683,6 +747,10 @@ class Clearing:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -722,6 +790,10 @@ class RopeBridge:
             return('Clearing()')
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -763,6 +835,10 @@ class BridgeCrossing:
             return('RopeBridge()')
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -804,6 +880,10 @@ class BeachOne:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
@@ -842,6 +922,10 @@ class TrackOne:
             print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.name)
+        elif action == "Load":
+            inventory.load_game()
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")
