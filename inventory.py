@@ -24,13 +24,12 @@ def save_game():
     if game_saved:
         print("Game Saved!")
     else:
-        print("Game could not be saved")
+        print("Game could not be saved.")
 
 
 def load_game():
-    '''Load save file and set inventory, but what about room inventories'''
     game_loaded = savegame.load_game()
     if game_loaded:
-        print("Save Data Loaded!")
+        inventory = game_loaded
     else:
-        print("No save game found, starting at the begining")
+        print("No save game found, starting at the begining...")
