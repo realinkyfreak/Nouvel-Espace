@@ -1,5 +1,5 @@
 import inventory
-
+'''Need to add save and load game to each room!'''
 
 class RoomTemplate:
     def __init__(self):
@@ -86,7 +86,10 @@ class CargoHold:
 
     def __init__(self):
         self.name = "Cargo Hold"
-        self.inventory = ['Box Cutter Knife']
+        if 'Box Cutter Knife' in inventory.inventory:
+            self.inventory = []
+        else:
+            self.inventory = ['Box Cutter Knife']
         self.room_details = "It looks like this are sustained some damage in the crash, the rover vehicle appears " \
                             "damaged."
 
@@ -170,7 +173,10 @@ class ShipsStore:
 
     def __init__(self):
         self.name = "Ships Store"
-        self.inventory = ['First Aid Kit']
+        if 'First Aid Kit' in inventory.inventory:
+            self.inventory = []
+        else:
+            self.inventory = ['First Aid Kit']
         self.room_details = "The ships store is too dark to see anything."
 
     def show_inventory(self):
@@ -488,7 +494,10 @@ class Causeway:
 class CrashTrench:
     def __init__(self):
         self.name = "Crash Trench"
-        self.inventory = ['Torch','Water Bottle']
+        if 'Torch' in inventory.inventory:
+            self.inventory = []
+        else:
+            self.inventory = ['Torch']
         self.room_details = "You're standing in the bottom of a shallow trench that was dug as the ship crashed and " \
                             "skidded along the ground. To the south one of the ships engines is still running and " \
                             "hot gasses and flames are eminating from it."
@@ -518,10 +527,6 @@ class CrashTrench:
             inventory.add_item('Torch')
             self.inventory.remove('Torch')
             print("You took the Torch.")
-        elif action == "Take Bottle" or action == "Take Water Bottle":
-            inventory.add_item('Water Bottle')
-            self.inventory.remove('Water Bottle')
-            print("You took the Water Bottle.")
         elif action == "Exit":
             print("Are you sure you want to quit?")
             quitter = input("Y or N: ")

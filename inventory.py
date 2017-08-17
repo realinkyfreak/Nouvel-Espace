@@ -1,3 +1,5 @@
+import savegame
+
 inventory = []
 
 
@@ -15,3 +17,20 @@ def show_inventory():
         print(inventory)
     else:
         print("You are not carrying anything.")
+
+
+def save_game():
+    game_saved = savegame.save_game(inventory)
+    if game_saved:
+        print("Game Saved!")
+    else:
+        print("Game could not be saved")
+
+
+def load_game():
+    '''Load save file and set inventory, but what about room inventories'''
+    game_loaded = savegame.load_game()
+    if game_loaded:
+        print("Save Data Loaded!")
+    else:
+        print("No save game found, starting at the begining")
