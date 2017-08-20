@@ -2,7 +2,6 @@ import savegame
 
 inventory = []
 
-
 def add_item(item):
     inventory.append(item)
 
@@ -30,7 +29,11 @@ def save_game(room):
 def load_game():
     game_loaded = savegame.load_game()
     if game_loaded:
-        for item in game_loaded:
-            inventory.append(item)
+        print(game_loaded)
+        current_room = game_loaded[0]
+        '''broken load...damn it!'''
+        i=1
+        while i < game_loaded.__len__()-1:
+            inventory.append(i)
     else:
         print("No save game found, starting at the begining...")
