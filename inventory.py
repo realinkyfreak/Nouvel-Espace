@@ -29,11 +29,12 @@ def save_game(room):
 def load_game():
     game_loaded = savegame.load_game()
     if game_loaded:
-        print(game_loaded)
-        current_room = game_loaded[0]
-        '''broken load...damn it!'''
-        i=1
-        while i < game_loaded.__len__()-1:
-            inventory.append(i)
+        print(game_loaded[0])
+        counter = 1
+        while counter < len(game_loaded):
+            inventory.append(game_loaded[counter].strip())
+            counter += 1
+        print("Game Loaded!")
+        return game_loaded[0]
     else:
         print("No save game found, starting at the begining...")
