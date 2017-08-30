@@ -1,7 +1,7 @@
 # Nouvel-Espace
 Information regarding the running of the game and game play can be found in this file. This game should run on either Linux or Windows, but I prefer Linux an so the instructions below are for Linux. 
 <p><b>Running the Game</b><br>
-To run the game, first download the zip file of the source code and extract it to a suitable location on your system. Hopefully this will be something like <i>~/nouvel-espace</i>. You will also require python3.</p>
+  To run the game, first <a href="http://carrington-chappell.co.uk/nouvel-espace.zip" target="_blank">download the zip file</a> of the source code and extract it to a suitable location on your system. Hopefully this will be something like <i>~/nouvel-espace</i>. You will also require python3.</p>
 <p>Next open a terminal and navigate to your extract directory, then simply type:<p>
 <p><i>python3 main.py</i></p>
 <p><b>Game Play</b><br>
