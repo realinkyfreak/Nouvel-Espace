@@ -1625,8 +1625,8 @@ class Boat:
         self.name = "Boat"
         self.save_name = "Boat"
         self.inventory = []
-        self.room_details = "You're in a small wooden boat. Despite the old looking boat there are no sails and no " \
-                            "oars, but there is a control panel with a red button marked with a strange symbol."
+        self.room_details = "You're in a small wooden boat. There are no sails and no oars, but despite the old " \
+                            "looking boat there is a control panel with a red button marked with a strange symbol."
 
 
     def show_inventory(self):
@@ -1650,6 +1650,95 @@ class Boat:
             print("The boat starts to move...it's taking you Westwards. It's reached land! You get out and the boat "
                   "goes back the way it came.")
             return 'TrackFour()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class TrackFour:
+    def __init__(self):
+        self.name = "Worn Track"
+        self.save_name = "TrackFour"
+        self.inventory = []
+        self.room_details = "The track goes North where it's being guarded by strange looking soldiers. To the east" \
+                            "the track goes into a tunnel."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'BlockedTrack()'
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'OrnateArch()'
+        elif action == "West":
+            return 'Tunnel()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class BlockedTrack:
+    def __init__(self):
+        self.name = "Worn Track"
+        self.save_name = "BlockedTrack"
+        self.inventory = []
+        self.room_details = "The track is blocked by an armed guard. You don't speak their language and you " \
+                            "certainly don't look like him! Maybe a conversation is a bad idea at this time " \
+                            "maybe you should go back the way you came?"
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'TrackFour()'
+        elif action == "West":
+            print("You can't go that way.")
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Save":
