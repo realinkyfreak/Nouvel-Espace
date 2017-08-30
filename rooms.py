@@ -1401,7 +1401,8 @@ class CliffFaceTwo:
         self.name = "Cliff Face"
         self.save_name = "CliffFaceTwo"
         self.inventory = ['Climbing Rope']
-        self.room_details = ""
+        self.room_details = "Looks like someone tried to climb the cliffs. Judging by the flat red splodge at the " \
+                            "bottom of the cliff face, they didn't have much luck!"
 
 
     def show_inventory(self):
@@ -1425,6 +1426,230 @@ class CliffFaceTwo:
             inventory.add_item('Climbing Rope')
             self.inventory.remove('Climbing Rope')
             print("You took the Climbing Rope")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class CliffFaceThree:
+    def __init__(self):
+        self.name = "Cliff Face"
+        self.save_name = "CliffFaceThree"
+        self.inventory = []
+        self.room_details = "To the West in the distance you can see some trees. To the North is what looks like an " \
+                            "altar, maybe an ancient religious temple stood here."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'Altar()'
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'CliffFaceTwo()'
+        elif action == "West":
+            return 'SwampEdgeEast()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class SwampEdgeEast:
+    def __init__(self):
+        self.name = "Swamp Edge"
+        self.save_name = "SwampEdgeEast"
+        self.inventory = []
+        self.room_details = "Your toes are getting wet! The swamp extends to the west, but there is no way of " \
+                            "crossing it."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            return 'LakeSide()'
+        elif action == "East":
+            return 'CliffFaceThree()'
+        elif action == "South":
+            return 'BeachPassFive()'
+        elif action == "West":
+            print("You can't go that way.")
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class Altar:
+    def __init__(self):
+        self.name = "Creepy Altar"
+        self.save_name = "Altar"
+        self.inventory = []
+        self.room_details = "A large stone altar is in front of you, it looks like it could have been use for " \
+                            "sacrificial ceremonies...let's hope the priests aren't still here!"
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            print("You can't go that way.")
+        elif action == "South":
+            return 'CliffFaceThree()'
+        elif action == "West":
+            return 'LakeSide()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class LakeSide:
+    def __init__(self):
+        self.name = "Lake"
+        self.save_name = "LakeSide"
+        self.inventory = []
+        self.room_details = "You are standing at the edge of a large lake, there is a small boat here that looks " \
+                            "like it could carry you across the lake to the West."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            return 'Altar()'
+        elif action == "South":
+            return 'SwampEdgeEast()'
+        elif action == "West":
+            return 'Boat()'
+        elif action == "Inventory":
+            inventory.show_inventory()
+        elif action == "Save":
+            inventory.save_game(self.save_name)
+        elif action == "Load":
+            return inventory.load_game()
+        elif action == "Exit":
+            print("Are you sure you want to quit?")
+            quitter = input("Y or N: ")
+            if quitter.title() == "Y":
+                print("Goodbye....")
+                exit(0)
+            else:
+                print("Glad to hear it!")
+        else:
+            print("Sorry, I don't understand.")
+
+
+class Boat:
+    def __init__(self):
+        self.name = "Boat"
+        self.save_name = "Boat"
+        self.inventory = []
+        self.room_details = "You're in a small wooden boat. Despite the old looking boat there are no sails and no " \
+                            "oars, but there is a control panel with a red button marked with a strange symbol."
+
+
+    def show_inventory(self):
+        if self.inventory:
+            print("Looking around you also see:")
+            print(self.inventory)
+        else:
+            print("Looking around you don't see anything significant.")
+
+
+    def room_action(self, action):
+        if action == "North":
+            print("You can't go that way.")
+        elif action == "East":
+            return 'LakeSide()'
+        elif action == "South":
+            print("You can't go that way.")
+        elif action == "West":
+            print("It's a bit wet in the lake, is there something else you could do?")
+        elif action == "Push Button":
+            print("The boat starts to move...it's taking you Westwards. It's reached land! You get out and the boat "
+                  "goes back the way it came.")
+            return 'TrackFour()'
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Save":
