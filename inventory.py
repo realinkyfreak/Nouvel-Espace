@@ -39,3 +39,13 @@ def load_game():
         return game_loaded[0]
     else:
         print("No save game found, starting at the begining...")
+
+
+def end_game(room):
+    save_game(room)
+    print("CONGRATULATIONS !!! You escaped the planet and are on your way home...if the coordinates were correct...")
+    print("********************************************")
+    print("Thanks for playing Nouvel Espace.")
+    print("All game development and design are by Andrew Carrington-Chappell.")
+    print("Wan't a copy of the original draft game map...download it from:")
+    print("https://www.carrington-chappell.co.uk/downloads/map.jpg")
