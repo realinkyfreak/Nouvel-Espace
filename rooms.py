@@ -3660,7 +3660,7 @@ class Shuttle:
         self.inventory = []
         self.cordinates_entered = False
         self.room_details = "The controls on the spacecraft although different, are strangely familiar. You might " \
-                            "be able to pilot this craft. If you could enter Escape Coordinates, you might be " \
+                            "be able to pilot this craft. If you could Enter Escape Coordinates, you might be " \
                             "able to Launch!"
 
 
@@ -3683,6 +3683,7 @@ class Shuttle:
             return 'ShuttleAirLock()'
         elif action == "Enter Escape Coordinates" or action == "Enter Coordinates":
             self.cordinates_entered = True
+            print("Escape coordinates entered.")
         elif action == "Launch":
             if self.cordinates_entered:
                 inventory.end_game(self.save_name)
