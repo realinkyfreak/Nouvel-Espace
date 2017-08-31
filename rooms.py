@@ -400,6 +400,10 @@ class JungleThree:
             print("You can't go that way.")
         elif action == "West":
             return 'JungleOne()'
+        elif action == "Take Ladder" or action == "Take Rope Ladder":
+            inventory.add_item('Rope Ladder')
+            self.inventory.remove('Rope Ladder')
+            print("You took the Rope Ladder.")
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Save":
@@ -1624,7 +1628,7 @@ class Boat:
     def __init__(self):
         self.name = "Boat"
         self.save_name = "Boat"
-        self.inventory = []
+        self.inventory = ['Rebreather']
         self.room_details = "You're in a small wooden boat. There are no sails and no oars, but despite the old " \
                             "looking boat there is a control panel with a red button marked with a strange symbol."
 
@@ -1650,6 +1654,10 @@ class Boat:
             print("The boat starts to move...it's taking you Westwards. It's reached land! You get out and the boat "
                   "goes back the way it came.")
             return 'TrackFour()'
+        elif action == "Take Rebreather":
+            inventory.add_item('Rebreather')
+            self.inventory.remove('Rebreather')
+            print("You took the Rebreather.")
         elif action == "Inventory":
             inventory.show_inventory()
         elif action == "Save":
