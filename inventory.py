@@ -48,4 +48,4 @@ def end_game(room):
     print("Thanks for playing Nouvel Espace.")
     print("All game development and design are by Andrew Carrington-Chappell.")
     print("Wan't a copy of the original draft game map...download it from:")
-    print("https://www.carrington-chappell.co.uk/downloads/map.jpg")
+    print("https://www.carrington-chappell.co.uk/downloads/Nouvel-Espace_Design_Map.jpg") 
