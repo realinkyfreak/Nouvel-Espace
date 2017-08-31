@@ -1,6 +1,7 @@
 import savegame
 
 inventory = []
+gas_vent_on = True
 
 def add_item(item):
     inventory.append(item)
